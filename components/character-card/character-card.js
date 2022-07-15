@@ -1,42 +1,48 @@
-export default function fetchCharacter() {... };
+/*
+const tests = [
 
-async function fetchCharacter() {
-  try {
-    const response = await fetch('https://rickandmortyapi.com/api/character');
-    console.log(response);
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error(error.message);
-  }
+
+{
+  name: "jame",
+  gender: "male",
+  age: 22,
+
+},
+{
+  name: "max",
+  gender: "female",
+  age: 52,
+
+},
+{
+  name: "markus",
+  gender: "between",
+  age: 37,
+
 }
-fetchCharacter();
+];
 
 
 
-function createCharacterList(characters) {
-    const list = document.createElement('ul');
-    document.body.append(list);
-}
+tests.forEach((test) => {
+  const characterCard = document.createElement("article");
+  characterCard.classList.add("character_card");
+
+  const characterName = document.createElement("h2");
+  characterName.innerText = test.name;
+
+  const characterGender = document.createElement("p");
+  characterGender.innerText = test.gender;
+//classList for p//
+
+  document.body.append(characterCard);
+
+  characterCard.append(characterName,characterGender);
+
+});
+
+
+*/
 
 
 
-
-
-    
-
-  characters.forEach(character) => {
-    const item = document.createElement('li');
-      // item.className = 'list__item';
-      
-      
- };
-
-console.log(createCharacterList);
-    
-      
-    const heading = document.createElement('h2');
-    heading.innerText = person.name;
-    item.append(heading);
-  });
-}
