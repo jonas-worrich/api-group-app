@@ -1,22 +1,38 @@
+let datalist = [];
+const statusFilterButton = document.createElement("button") 
+statusFilterButton.classList.add("filter_button_status")
+statusFilterButton.innerText = "Status Filter"
+document.body.append(statusFilterButton);
+statusFilterButton.addEventListener("click",() =>  {
 
+const charactersDead = datalist.filter((character)=> {
+
+  return character.status === "Dead";
+
+});
+
+createRickList (charactersDead)
+
+console.log(charactersDead)
+
+})
 const rickApi = 'https://rickandmortyapi.com/api/character';
   fetch(rickApi)
   .then((response) => 
     response.json())
-    .then((data) =>
-    createRickList(data.results));
+    .then((data) => {
+      datalist = data.results
+    createRickList(data.results)});
 
     console.log(rickApi);
 
 function createRickList(character){
 
-
-
-
 character.forEach((datas) => {
+  
     const characterCard = document.createElement("article");
     characterCard.classList.add("character_card");
-  
+   
     const characterName = document.createElement("h2");
     characterName.classList.add("character_name");
     characterName.innerText = datas.name;
