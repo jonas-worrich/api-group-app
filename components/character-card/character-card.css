@@ -1,4 +1,21 @@
 .character_card{
-  color: blue;
+  padding: 1rem;
+  margin: 2rem;
+  background: lightcoral;
 
+}
+.character_list{
+    list-style: none;
+}
+
+
+
+.character_name{
+color: blueviolet;
+
+}
+
+.character_list_item{
+
+    color: green;
 }
