@@ -16,6 +16,22 @@ createRickList (charactersDead)
 console.log(charactersDead)
 
 })
+
+
+const statusFilterButtonReset = document.createElement("button") 
+statusFilterButtonReset.classList.add("filter_button_status")
+statusFilterButtonReset.innerText = "Reset"
+document.body.append(statusFilterButtonReset);
+statusFilterButtonReset.addEventListener("click",() =>  {
+
+createRickList (datalist)
+
+})
+
+
+const character_wraper = document.createElement("section");
+document.body.append(character_wraper);
+
 const rickApi = 'https://rickandmortyapi.com/api/character';
   fetch(rickApi)
   .then((response) => 
@@ -27,7 +43,7 @@ const rickApi = 'https://rickandmortyapi.com/api/character';
     console.log(rickApi);
 
 function createRickList(character){
-
+character_wraper.innerHTML = "";
 character.forEach((datas) => {
   
     const characterCard = document.createElement("article");
@@ -59,12 +75,12 @@ character.forEach((datas) => {
 
   
      // Append: 
-    document.body.append(characterCard);
+    character_wraper.append(characterCard);
     characterList.append(characterSpecies,characterStatus,characterGender);
   
     characterCard.append(characterName,characterList);
   
   });
   
-}
+} 
 
